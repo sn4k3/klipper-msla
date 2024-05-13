@@ -9,7 +9,10 @@ Instructions to have Klipper running with mSLA printers.
 2. Raspberry Pi 4 or greater.
 3. Your printer must have an LCD with HDMI connection. As alternative is possible to buy an HDMI converter board.  
 
-Hardware example: BTT Manta M5P + CM4.
+### Hardware example: 
+- BTT Manta M5P
+- Raspberry CM4 (4Gb + Wifi + Lite recommended)
+- Trinamic TMC2209
 
 ## Setup
 
