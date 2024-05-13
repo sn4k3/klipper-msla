@@ -27,11 +27,12 @@ Hardware example: BTT Manta M5P + CM4.
 
 # 2. Software and firmware
 
-1. Install Klipper as you normaly do, either manually or via MainsailOS to the sdcard.
+1. Install Klipper as you normaly do, either manually or via MainsailOS to the sdcard. I recommend the use of [rpi imager](https://www.raspberrypi.com/software).
 2. Update your system: `sudo apt update && sudo apt full-upgrade -y`
 3. Flash MCU with klipper as you normally do, eg: via [kiuah](https://github.com/dw-0/kiauh).
 4. After instalation you need to replace the `~/klipper/klippy/` folder by my [klipper-msla](https://github.com/sn4k3/klipper/tree/msla/klippy) fork.
    - Only need to replace `~/klipper/klippy` folder but does not hurt if you replace the whole `~/klipper` folder
+5. (Optional) Configure SAMBA for easy access and modify the system contents.
 5. Reboot
 6. Access Mainsail portal and confirm if is working.
 
@@ -69,7 +70,7 @@ max_z_velocity: 10
 max_z_accel: 25
 ```
 
-## Configuration sample:
+## Full configuration sample:
 
 ```ini
 [mcu]
