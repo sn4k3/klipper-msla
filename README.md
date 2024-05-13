@@ -227,7 +227,9 @@ MSLA_DISPLAY_RESPONSE_TIME
 MSLA_DISPLAY_TEST
 ```
 
-2. Calibrate the printer head home (Z0), follow your printer manual or whatever technique you use. Myself I like to place the VAT in and calibrate over it:  
+# 4. Calibrate
+
+Calibrate the printer head home (Z0) by follow your printer manual or whatever technique you use. Myself I like to place the VAT in and calibrate over it:  
    - Un-tight the printer head screws.
    - Home printer (`G28 Z`).
    - Press the plate against the VAT.
@@ -265,5 +267,13 @@ gcode:
     M117
 ```
 
-3. Slice and run a print without the VAT to ensure everything is correct and working as it should.
-4. Double check if your fans and heaters are working properly.
+# 5. Final run
+
+1. Slice and run a print without the VAT to ensure everything is correct and working as it should.
+2. Place a white papper on the screen to better observe the layer image.
+3. Double check if your fans and heaters are working properly.
+4. Test and observe the `PAUSE` and `PRINT_CANCEL` behaviour
+
+# 6. Finsh
+
+Have fun with open-source firmware and unlocked new printer!
