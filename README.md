@@ -232,7 +232,7 @@ MSLA_DISPLAY_TEST
 
 # 4. Calibrate
 
-Calibrate the printer head home (Z0) by follow your printer manual or whatever technique you use. Myself I like to place the VAT in and calibrate over it:  
+Calibrate the printer head home (`Z0`) by follow your printer manual or whatever technique you use. Myself I like to place the VAT in and calibrate over it:  
    - Un-tight the printer head screws.
    - Home printer (`G28 Z`).
    - Press the plate against the VAT.
