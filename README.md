@@ -242,7 +242,7 @@ Note that if you calibrate the home at aboslute 0mm from screen, the trigger del
 If the plate have no spike object, such crash will not damage the screen, however I recommend to use adequate(no under-current nor over-current) 
 current for the motor to stall with minor force. If you using TMC driver you can adjust the current before home and restore it after, so it will stall as soon it
 touch LCD and motor will not have the energy to try harder. 
-To use that protection use the include:
+To use that protection use the following include in your `printer.cfg`:
 
 ```ini
 # UART TMC2208 and TMC2209 safe home
