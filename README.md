@@ -244,7 +244,7 @@ current for the motor to stall with minor force. If you using TMC driver you can
 touch LCD and motor will not have the energy to try harder. 
 To use that protection use the include:
 
-```
+```ini
 # UART TMC2208 and TMC2209 safe home
 [include klipper-msla-macros/optional/tmc_safe_home.cfg]
 ```
