@@ -238,36 +238,22 @@ Calibrate the printer head home (Z0) by follow your printer manual or whatever t
    - Press the plate against the VAT.
    - Tight screw the printer head.
 
-Note that if you calibrate the home at aboslute 0mm from screen, the trigger delay of the endstop will make it to crash agasint the screen. If the plate have no spike object, such crash will not damage the screen, however I recommend to use adequate(no under-current nor over-current) current for the motor to stall with minor force. If you using TMC driver you can adjust the current before home and restore it after, so it will stall as soon it touch LCD and motor will not have the energy to try harder. Example bellow for TMC2209:
+Note that if you calibrate the home at aboslute 0mm from screen, the trigger delay of the endstop will make it to crash agasint the screen. 
+If the plate have no spike object, such crash will not damage the screen, however I recommend to use adequate(no under-current nor over-current) 
+current for the motor to stall with minor force. If you using TMC driver you can adjust the current before home and restore it after, so it will stall as soon it
+touch LCD and motor will not have the energy to try harder. 
+To use that protection use the include:
+
+```
+# UART TMC2208 and TMC2209 safe home
+[include klipper-msla-macros/optional/tmc_safe_home.cfg]
+```
+
+Also configure the current by using the variable:
 
 ```ini
-# This sample is only if you using tmc2209!
-# Safer home preventing hard crash against display
-[gcode_macro G28]
-rename_existing: G28.999
-gcode:
-    ### SET THIS DEFAULT CARFULLY - start really low
-    {% set my_current = params.CURRENT|default(0.300)|float %} ; adjust crash current
-    ###
-    {% set oldcurrent = printer.configfile.settings["tmc2209 stepper_z"].run_current %}
-    {% set oldhold = printer.configfile.settings["tmc2209 stepper_z"].hold_current %} 
-    M117 Homing...
-     SET_TMC_CURRENT STEPPER=stepper_z CURRENT={my_current} ; drop current on Z stepper
-    
-    {% if printer.configfile.settings["stepper_z1"] %} ; test for dual Z
-        SET_TMC_CURRENT STEPPER=stepper_z1 CURRENT={my_current} ; drop current
-    {% endif %}
-
-    G4 P200 ; Probably not necessary, it is here just for sure
-    G28.999 Z0
-    G4 P200 ; same as the first one
-    
-    SET_TMC_CURRENT STEPPER=stepper_z CURRENT={oldcurrent} HOLDCURRENT={oldhold}
-
-    {% if printer.configfile.settings["stepper_z1"] %} ; test for dual Z
-        SET_TMC_CURRENT STEPPER=stepper_z1 CURRENT={oldcurrent} HOLDCURRENT={oldhold} ; reset current
-    {% endif %}
-    M117
+[gcode_macro _km_options]
+variable_tmc_safe_home_current: 0.290
 ```
 
 # 5. Final run
