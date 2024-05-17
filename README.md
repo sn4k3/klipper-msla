@@ -35,9 +35,10 @@ Instructions to have Klipper running with mSLA printers.
 3. Flash MCU with klipper as you normally do, eg: via [kiuah](https://github.com/dw-0/kiauh).
 4. After instalation you need to replace the `~/klipper/klippy/` folder by my [klipper-msla](https://github.com/sn4k3/klipper/tree/msla/klippy) fork.
    - Only need to replace `~/klipper/klippy` folder but does not hurt if you replace the whole `~/klipper` folder
-5. (Optional) Configure SAMBA for easy access and modify the system contents.
-5. Reboot
-6. Access Mainsail portal and confirm if is working.
+5. Install the pillow python module: `~/klippy-env/bin/pip install pillow`
+6. (Optional) Configure SAMBA for easy access and modify the system contents. `sudo apt-get install samba samba-common-bin`
+7. Reboot
+8. Access Mainsail portal and confirm if is working.
 
 # 3. Configuration
 
